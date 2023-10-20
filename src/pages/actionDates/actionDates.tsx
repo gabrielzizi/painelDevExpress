@@ -14,10 +14,10 @@ import events from '../../functions/events';
 
 const refreshModeLabel = { 'aria-label': 'Refresh Mode' };
 const URL = 'https://js.devexpress.com/Demos/Mvc/api/DataGridWebApi';
-
 const REFRESH_MODES = ['full', 'reshape', 'repaint'];
 
 class App extends React.Component {
+  url = process.env.REACT_APP_API_URL
   constructor(props: any) {
     super(props);
 
@@ -25,7 +25,7 @@ class App extends React.Component {
       ordersData: new CustomStore({
             key: 'id',
             load: async () => {
-              const res = await axios.get(`${process.env.API_URL}/readActions`, { headers: { "ngrok-skip-browser-warning": "69420" }})
+              const res = await axios.get(`${this.url}/readActions`, { headers: { "ngrok-skip-browser-warning": "69420" }})
               return res.data
              },
             insert: async (values) => {
@@ -94,7 +94,7 @@ class App extends React.Component {
     const args = Object.keys(data || {}).map((key) => `${key}=${data[key]}`).join(' ');
 
     const time = formatDate(new Date(), 'HH:mm:ss');
-    const request = [time, method, url.slice(URL.length), args].join(' ');
+    const request = [time, method, url.slice(url.length), args].join(' ');
 
     this.setState((state:any) => ({ requests: [request].concat(state.requests) }));
   }

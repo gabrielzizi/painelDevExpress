@@ -1,9 +1,10 @@
 import axios from 'axios'
 
 class ApiIntegration {
-    url = process.env.API_URL
+    url = process.env.REACT_APP_API_URL
 
     getActions = async () => {
+        console.log('dsdasdsadsa',this.url)
         const res = await axios.get(`${this.url}/readActions`, { headers: { "ngrok-skip-browser-warning": "69420" }})
         return res.data
     }
