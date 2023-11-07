@@ -19,7 +19,7 @@ export default function SideNavigationMenu(props: React.PropsWithChildren<SideNa
 
   const { isLarge } = useScreenSize();
   function normalizePath () {
-    return navigation.map((item) => (
+    return navigation.map((item: any) => (
       { ...item, expanded: isLarge, path: item.path && !(/^\//.test(item.path)) ? `/${item.path}` : item.path }
     ))
   }

@@ -38,6 +38,7 @@ export interface SideNavToolbarProps {
 export interface SingleCardProps {
     title?: string;
     description?: string;
+    className?: string;
 }
 
 export type Handle = () => void;
@@ -53,4 +54,10 @@ export type NavigationContextType = {
 
 export type ValidationType = {
     value: string;
+}
+
+export interface ParamHandler {
+    endpoint: string,
+    method: string,
+    data?: any
 }

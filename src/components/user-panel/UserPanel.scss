@@ -12,10 +12,10 @@
   .image-container {
     overflow: hidden;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     margin: 0 4px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(255 255 255);
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 
     .user-image {
@@ -26,8 +26,9 @@
 
   .user-name {
     font-size: 14px;
-    color: $base-text-color;
+    color: #ffff;
     margin: 0 9px;
+    font-weight: 500;
   }
 }
 

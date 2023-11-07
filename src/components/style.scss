@@ -1,0 +1,22 @@
+    a {
+        text-decoration: none;
+        transition: 0.3s;
+        color: #fbba00 !important
+    }
+
+    a:hover {
+        color: #f58f00;
+    }
+
+
+
+.btn {
+    .dx-button.dx-button-default {
+        background-color: #fbba00;
+        transition: 0.3s;
+    }
+
+    .dx-button.dx-button-default:hover {
+        background-color: #f58f00;
+    }
+}

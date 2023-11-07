@@ -8,7 +8,7 @@ export default function UnauthenticatedContent() {
       <Route
         path='/login' 
         element={
-          <SingleCard title="Sign In">
+          <SingleCard title="Login" className='signInClass'>
             <LoginForm />
           </SingleCard>
         }
@@ -16,7 +16,7 @@ export default function UnauthenticatedContent() {
       <Route
         path='/create-account'
         element={
-          <SingleCard title="Sign Up">
+          <SingleCard title="Criar conta">
             <CreateAccountForm />
           </SingleCard>
         }
@@ -25,8 +25,8 @@ export default function UnauthenticatedContent() {
         path='/reset-password'
         element={
           <SingleCard
-            title="Reset Password"
-            description="Please enter the email address that you used to register, and we will send you a link to reset your password via Email."
+            title="Resetar Senha"
+            description="Por favor, insira o endereço de e-mail que você usou para se registrar e enviaremos um link para redefinir sua senha por e-mail."
           >
             <ResetPasswordForm />
           </SingleCard>

@@ -27,6 +27,8 @@ function AuthProvider(props: React.PropsWithChildren<unknown>) {
   }, []);
 
   const signOut = useCallback(() => {
+    localStorage.clear();
+
     setUser(undefined);
   }, []);
 

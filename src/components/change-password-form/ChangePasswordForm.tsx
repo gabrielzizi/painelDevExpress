@@ -47,7 +47,7 @@ export default function ChangePasswordForm() {
           editorType={'dxTextBox'}
           editorOptions={passwordEditorOptions}
         >
-          <RequiredRule message="Password is required" />
+          <RequiredRule message="A senha é necessária" />
           <Label visible={false} />
         </Item>
         <Item
@@ -55,14 +55,14 @@ export default function ChangePasswordForm() {
           editorType={'dxTextBox'}
           editorOptions={confirmedPasswordEditorOptions}
         >
-          <RequiredRule message="Password is required" />
+          <RequiredRule message="A senha é necessária" />
           <CustomRule
             message={'Passwords do not match'}
             validationCallback={confirmPassword}
           />
           <Label visible={false} />
         </Item>
-        <ButtonItem>
+        <ButtonItem cssClass='btn'>
           <ButtonOptions
             width={'100%'}
             type={'default'}

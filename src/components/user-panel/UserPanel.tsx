@@ -15,12 +15,7 @@ export default function UserPanel({ menuMode }: UserPanelProps) {
   }
   const menuItems = useMemo(() => ([
     {
-      text: 'Profile',
-      icon: 'user',
-      onClick: navigateToProfile
-    },
-    {
-      text: 'Logout',
+      text: 'Sair',
       icon: 'runner',
       onClick: signOut
     }
@@ -31,7 +26,7 @@ export default function UserPanel({ menuMode }: UserPanelProps) {
         <div className={'image-container'}>
           <div
             style={{
-              background: `url(${user!.avatarUrl}) no-repeat #fff`,
+              background: `url(${user!.avatarUrl || 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }) no-repeat #fff`,
               backgroundSize: 'cover'
             }}
             className={'user-image'} />

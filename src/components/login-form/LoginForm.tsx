@@ -44,8 +44,8 @@ export default function LoginForm() {
           editorType={'dxTextBox'}
           editorOptions={emailEditorOptions}
         >
-          <RequiredRule message="Email is required" />
-          <EmailRule message="Email is invalid" />
+          <RequiredRule message="O email é necessário" />
+          <EmailRule message="Email inválido" />
           <Label visible={false} />
         </Item>
         <Item
@@ -53,17 +53,17 @@ export default function LoginForm() {
           editorType={'dxTextBox'}
           editorOptions={passwordEditorOptions}
         >
-          <RequiredRule message="Password is required" />
+          <RequiredRule message="A senha é necessária" />
           <Label visible={false} />
         </Item>
-        <Item
+        {/* <Item
           dataField={'rememberMe'}
           editorType={'dxCheckBox'}
           editorOptions={rememberMeEditorOptions}
         >
           <Label visible={false} />
-        </Item>
-        <ButtonItem>
+        </Item> */}
+        <ButtonItem cssClass='btn'>
           <ButtonOptions
             width={'100%'}
             type={'default'}
@@ -73,19 +73,19 @@ export default function LoginForm() {
               {
                 loading
                   ? <LoadIndicator width={'24px'} height={'24px'} visible={true} />
-                  : 'Sign In'
+                  : 'Entrar'
               }
             </span>
           </ButtonOptions>
         </ButtonItem>
         <Item>
           <div className={'link'}>
-            <Link to={'/reset-password'}>Forgot password?</Link>
+            <Link to={'/reset-password'}>Esqueceu sua senha?</Link>
           </div>
         </Item>
         <ButtonItem>
           <ButtonOptions
-            text={'Create an account'}
+            text={'Criar conta'}
             width={'100%'}
             onClick={onCreateAccountClick}
           />
@@ -97,4 +97,4 @@ export default function LoginForm() {
 
 const emailEditorOptions = { stylingMode: 'filled', placeholder: 'Email', mode: 'email' };
 const passwordEditorOptions = { stylingMode: 'filled', placeholder: 'Password', mode: 'password' };
-const rememberMeEditorOptions = { text: 'Remember me', elementAttr: { class: 'form-text' } };
+// const rememberMeEditorOptions = { text: 'Remember me', elementAttr: { class: 'form-text' } };

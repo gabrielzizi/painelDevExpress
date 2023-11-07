@@ -1,6 +1,14 @@
 import apiIntegration from '../service/apiIntegration'
 
 class Events {
+    onLoadData = async (): Promise<[]> => {
+      const paramsD = {
+        endpoint: 'readActions',
+        method: 'get'
+      }
+      return await apiIntegration.handleApi(paramsD)
+    }
+
     // onEditingStart  = (data: any) => {
     //     console.log('onEditingStart')
     //     console.log(data)
@@ -11,27 +19,27 @@ class Events {
     //     console.log(data)
     //   }
 
-      onRowInserting = (data: any) => {
-        console.log('onRowInserting')
-        apiIntegration.createAction(data)
-        console.log(data)
-      }
+      // onRowInserting = (data: any) => {
+      //   console.log('onRowInserting')
+      //   apiIntegration.createAction(data)
+      //   console.log(data)
+      // }
 
     //   onRowInserted = (data: any) => {
     //     console.log('onRowInserted')
     //     console.log(data)
     //   }
 
-      onRowUpdating = (data: any) => {
-        console.log('onRowUpdating', data)
-        apiIntegration.updateActions(data)
-      }
+      // onRowUpdating = (data: any) => {
+      //   console.log('onRowUpdating', data)
+      //   apiIntegration.updateActions(data)
+      // }
 
-      onRowRemoving = (key: any) => {
-        console.log('onRowRemoving', key)
+      // onRowRemoving = (key: any) => {
+      //   console.log('onRowRemoving', key)
 
-        apiIntegration.deleteActions(key)
-      }
+      //   apiIntegration.deleteActions(key)
+      // }
 
     //   onRowUpdated = (data: any) => {
     //     console.log('onRowUpdated')

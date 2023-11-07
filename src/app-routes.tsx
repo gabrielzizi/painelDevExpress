@@ -1,20 +1,22 @@
-import { HomePage, ProfilePage, actionDates } from './pages';
 import { withNavigationWatcher } from './contexts/navigation';
 
-const routes = [
-    {
-        path: '/actionsDate',
-        element: actionDates
-    },
-    {
-        path: '/profile',
-        element: ProfilePage
-    },
-    {
-        path: '/home',
-        element: HomePage
-    }
-];
+
+import { navigation } from './app-navigation'
+
+export let routes: any[] = [];
+
+navigation.forEach(navigation => {
+    navigation.items.forEach(item => {
+        const obj = {
+            path: item.path,
+            element: item.element
+        }
+
+        routes.push(obj);
+    })
+});
+
+console.log(routes);
 
 export default routes.map(route => {
     return {

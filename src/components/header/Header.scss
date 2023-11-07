@@ -5,10 +5,15 @@
   flex: 0 0 auto;
   z-index: 1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #fbba00;
 
   .dx-toolbar .dx-toolbar-item.menu-button>.dx-toolbar-item-content .dx-icon {
-    color: $base-accent;
+    color: #ffff;
   }
+}
+
+.header-toolbar {
+  background-color: #fbba00;
 }
 
 .dx-toolbar.header-toolbar .dx-toolbar-items-container .dx-toolbar-after {
@@ -28,6 +33,7 @@
 .header-title .dx-item-content {
   padding: 0;
   margin: 0;
+  color: #ffff;
 }
 
 .dx-theme-generic {

@@ -18,6 +18,7 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }: HeaderP
         >
           <Button icon="menu" stylingMode="text" onClick={toggleMenu} />
         </Item>
+        <img src="https://www.multicoisas.com.br/on/demandware.static/Sites-id_Multicoisas-Site/-/default/dw988755dd/images/icon-m.png" alt="Multicoisas"></img>
         <Item
           location={'before'}
           cssClass={'header-title'}
@@ -31,7 +32,7 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }: HeaderP
         >
           <Button
             className={'user-button authorization'}
-            width={210}
+            width={'auto'}
             height={'100%'}
             stylingMode={'text'}
           >

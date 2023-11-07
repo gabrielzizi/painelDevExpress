@@ -44,11 +44,11 @@ export default function ResetPasswordForm() {
           editorType={'dxTextBox'}
           editorOptions={emailEditorOptions}
         >
-          <RequiredRule message="Email is required" />
-          <EmailRule message="Email is invalid" />
+          <RequiredRule message="O email é necessário" />
+          <EmailRule message="Email inválido" />
           <Label visible={false} />
         </Item>
-        <ButtonItem>
+        <ButtonItem cssClass='btn'>
           <ButtonOptions
             elementAttr={submitButtonAttributes}
             width={'100%'}
@@ -59,14 +59,14 @@ export default function ResetPasswordForm() {
               {
                 loading
                   ? <LoadIndicator width={'24px'} height={'24px'} visible={true} />
-                  : 'Reset my password'
+                  : 'Resetar minha senha'
               }
             </span>
           </ButtonOptions>
         </ButtonItem>
         <Item>
           <div className={'login-link'}>
-            Return to <Link to={'/login'}>Sign In</Link>
+            <span style={{color: "rgba(0, 0, 0, 0.774)"}}>Retornar para</span> <Link to={'/login'}>Login</Link>
           </div>
         </Item>
       </Form>
