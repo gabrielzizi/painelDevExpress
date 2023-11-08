@@ -7,7 +7,7 @@ import './SideNavigationMenu.scss';
 import type { SideNavigationMenuProps } from '../../types';
 
 import * as events from 'devextreme/events';
-
+const userRole = 'contabilidade';
 export default function SideNavigationMenu(props: React.PropsWithChildren<SideNavigationMenuProps>) {
   const {
     children,
@@ -19,9 +19,17 @@ export default function SideNavigationMenu(props: React.PropsWithChildren<SideNa
 
   const { isLarge } = useScreenSize();
   function normalizePath () {
-    return navigation.map((item: any) => (
-      { ...item, expanded: isLarge, path: item.path && !(/^\//.test(item.path)) ? `/${item.path}` : item.path }
-    ))
+    let routes = navigation.map((item: any) => {
+      if (userRole === item.role){
+        return { ...item, expanded: isLarge, path: item.path && !(/^\//.test(item.path)) ? `/${item.path}` : item.path }
+      } else {
+        return undefined
+      }
+    })
+
+    routes = routes.filter((route: any) => route !== undefined)
+
+    return routes
   }
 
   const items = useMemo(

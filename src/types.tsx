@@ -20,8 +20,9 @@ export interface UserPanelProps {
 }
 
 export interface User {
-    email: string;
-    avatarUrl: string;
+    email?: string;
+    avatarUrl?: string;
+    token?: string;
 }
 
 export type AuthContextType = {

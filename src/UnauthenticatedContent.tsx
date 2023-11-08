@@ -6,7 +6,7 @@ export default function UnauthenticatedContent() {
   return (
     <Routes>
       <Route
-        path='/login' 
+        path='/login'
         element={
           <SingleCard title="Login" className='signInClass'>
             <LoginForm />
@@ -16,17 +16,18 @@ export default function UnauthenticatedContent() {
       <Route
         path='/create-account'
         element={
-          <SingleCard title="Criar conta">
+          <SingleCard title="Criar conta" className='signInClass'>
             <CreateAccountForm />
           </SingleCard>
         }
       />
-      <Route 
+      <Route
         path='/reset-password'
         element={
           <SingleCard
             title="Resetar Senha"
             description="Por favor, insira o endereço de e-mail que você usou para se registrar e enviaremos um link para redefinir sua senha por e-mail."
+            className='signInClass'
           >
             <ResetPasswordForm />
           </SingleCard>

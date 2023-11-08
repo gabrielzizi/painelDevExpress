@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { ParamHandler } from '../types'
+import { useAuth } from '../contexts/auth'
 
 const methods: any = {
     post: axios.post,
@@ -22,8 +23,6 @@ class ApiIntegration {
         }).catch(err => {
             return err
         })
-
-        console.log(res)
 
         if(res?.status === 400 || res.response?.status === 500 || res.response?.status === 400) {
             return res.response
@@ -54,8 +53,6 @@ class ApiIntegration {
         console.log(res)
 
         if(res.status === 400 || res.status === 500 || res.response?.status === 500 || res.response?.status === 400) {
-            console.log(res)
-
             return res.response
         }
 
@@ -74,8 +71,6 @@ class ApiIntegration {
             return err
         })
 
-        console.log(res)
-
         if(res.status === 400) {
             return res.response
         }
@@ -84,17 +79,29 @@ class ApiIntegration {
     }
 
     getUser = async () => {
-        const token = localStorage.getItem('token');
-        const email = localStorage.getItem('email');
+        try {
+            const token: any = localStorage.getItem('token');
+            const email = localStorage.getItem('email');
 
-        const res = await axios.get(`${this.url}/getUser?email=${email}&token=${token}`, {
-            headers: {
-                "ngrok-skip-browser-warning": "69420",
-                "Access-Control-Allow-Origin": '*'
+            if (!email && !token) {
+                return {
+                     isOk: false
+                }
             }
-        })
 
-        return res
+            const res = await axios.get(`${this.url}/getUser?email=${email}&token=${token}`, {
+                headers: {
+                    "ngrok-skip-browser-warning": "69420",
+                    "Access-Control-Allow-Origin": '*'
+                }
+            })
+            return {
+                email: res.data.email,
+                token: token
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     handleApi = async (params: ParamHandler) => {

@@ -1,14 +1,20 @@
-    a {
-        text-decoration: none;
-        transition: 0.3s;
-        color: #fbba00 !important
-    }
+a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #fbba00 !important
+}
 
-    a:hover {
-        color: #f58f00;
-    }
+a:hover {
+    color: #f58f00;
+}
 
+.dx-icon-trash {
+    color: gray !important;
+}
 
+.dx-icon-trash:hover {
+    color: red !important;
+}
 
 .btn {
     .dx-button.dx-button-default {
